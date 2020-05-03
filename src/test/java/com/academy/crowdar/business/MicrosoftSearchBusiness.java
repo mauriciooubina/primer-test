@@ -1,6 +1,5 @@
 package com.academy.crowdar.business;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import com.academy.crowdar.business.pages.MicrosoftHomePage;
 import com.academy.crowdar.business.pages.MicrosoftResultPage;
@@ -8,6 +7,8 @@ import com.acadeny.crowdar.business.interfaces.BusinessInterface;
 import org.junit.Assert;
 
 public class MicrosoftSearchBusiness implements BusinessInterface{
+	private static final String SEARCH_BTN = "search";
+	private static final String SEARCH = "q";
 	private MicrosoftHomePage homePage;
 	private MicrosoftResultPage resultPage;
 	
@@ -18,9 +19,9 @@ public class MicrosoftSearchBusiness implements BusinessInterface{
 	}
 
 	public void perform(String text) {
-		homePage.clickButton();
-		homePage.completeText(text);
-		homePage.clickButton();
+		homePage.clickButton(SEARCH_BTN);
+		homePage.completeText(text,SEARCH);
+		homePage.clickButton(SEARCH_BTN);
 
 		Assert.assertEquals("", resultPage.getTitle());
 	}

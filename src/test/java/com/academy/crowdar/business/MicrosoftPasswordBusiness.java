@@ -6,23 +6,23 @@ import com.academy.crowdar.business.pages.MicrosoftHomePage;
 import com.academy.crowdar.business.pages.MicrosoftResultPage;
 import com.acadeny.crowdar.business.interfaces.BusinessInterface;
 
-
-public class MicrosoftLogInBusiness implements BusinessInterface{
-	private static final String logInBtn = "meControl";
-	private static final String logInPlace = "loginfmt";
+public class MicrosoftPasswordBusiness implements BusinessInterface{
+	private static final String continueBtn = "idSIButton9";
+	private static final String passwordPlace = "passwd";
 	private MicrosoftHomePage homePage;
 	private MicrosoftResultPage resultPage;	
 	
-	public MicrosoftLogInBusiness(WebDriver driver) {
+	public MicrosoftPasswordBusiness(WebDriver driver) {
 		super();
 		this.resultPage = new MicrosoftResultPage(driver);
 		this.homePage = new MicrosoftHomePage(driver);
 	}
 
 	public void perform(String text) {
-		homePage.clickButton(logInBtn);
-		homePage.completeText(text, logInPlace);
+		homePage.clickButton(continueBtn);
+		homePage.completeText(text, passwordPlace);
 		
 		Assert.assertEquals("Iniciar sesión en tu cuenta Microsoft", resultPage.getTitle());
 	}
+
 }

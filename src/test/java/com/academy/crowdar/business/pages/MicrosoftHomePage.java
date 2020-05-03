@@ -14,38 +14,26 @@ public class MicrosoftHomePage {
 		this.driver = driver;
 	}
 	
-	public void completeText(String text) {
-		WebElement search = driver.findElement(By.name("q"));	
-		search.clear();	
-		search.sendKeys(text);
-		search.sendKeys(Keys.TAB);
-	}
-	
-	public void clickButton() {
-		WebElement btnSearch = driver.findElement(By.cssSelector("#search"));
+	public void clickButton(String idBtn) {
+		WebElement btnSearch = driver.findElement(By.id(idBtn));
 		btnSearch.click();
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
+	public void completeText(String text, String place) {
+		WebElement search = driver.findElement(By.name(place));	
+		search.clear();	
+		search.sendKeys(text);
+		search.sendKeys(Keys.TAB);
+	}
+	
 	public String getTitle() {
 		return driver.getTitle();
 	}	
 
 	public void returnWebPage() {
 		driver.navigate().back();
-	}
-
-	public void clickLogInButton() {
-		WebElement btnSearch = driver.findElement(By.id("mectrl_headerPicture"));
-		btnSearch.click();
-	}
-
-	public void completeLogIn(String text) {
-		WebElement search = driver.findElement(By.cssSelector("#i0116"));	
-		search.clear();	
-		search.sendKeys(text);
-		search.sendKeys(Keys.TAB);
 	}
 
 }
