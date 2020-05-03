@@ -17,6 +17,8 @@ public class MicrosoftResultPage {
 		WebElement result = driver.findElement(By.cssSelector(String.format(SELECTOR_RESULT, text)));
 		result.click();
 	}
+	
+	
 
 	public Object getTitle() {
 		return driver.getTitle();
