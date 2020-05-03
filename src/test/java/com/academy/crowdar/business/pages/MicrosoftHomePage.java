@@ -37,7 +37,7 @@ public class MicrosoftHomePage {
 	}
 
 	public void clickLogInButton() {
-		WebElement btnSearch = driver.findElement(By.cssSelector("#mectrl_headerPicture"));
+		WebElement btnSearch = driver.findElement(By.id("mectrl_headerPicture"));
 		btnSearch.click();
 	}
 
