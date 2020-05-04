@@ -23,7 +23,8 @@ public class MicrosoftSearchBusiness implements BusinessInterface{
 		homePage.completeText(text,SEARCH);
 		homePage.clickButton(SEARCH_BTN);
 
-		String result = "https://www.microsoft.com/es-ar/search?q="+text;
-		Assert.assertEquals(result, resultPage.getUrl());
+		String result = "https://www.microsoft.com/es-ar/search?q=" + text;
+		String url = resultPage.getUrl().toString();
+		Assert.assertEquals(result,url);
 	}
 }
