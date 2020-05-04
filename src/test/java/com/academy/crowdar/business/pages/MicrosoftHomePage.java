@@ -36,4 +36,9 @@ public class MicrosoftHomePage {
 		driver.navigate().back();
 	}
 
+	public boolean searchError(String error) {
+		return driver.findElement(By.id(error)) != null;
+		
+	}
+
 }

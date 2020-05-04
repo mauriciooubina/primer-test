@@ -2,27 +2,28 @@ package com.academy.crowdar.business;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+
 import com.academy.crowdar.business.pages.MicrosoftHomePage;
 import com.academy.crowdar.business.pages.MicrosoftResultPage;
 import com.acadeny.crowdar.business.interfaces.BusinessInterface;
 
-public class MicrosoftPasswordBusiness implements BusinessInterface{
-	private static final String CONTINUE_BTN = "idSIButton9";
-	private static final String PASSWORD_PLACE = "passwd";
+public class MicrosoftForgotPasswordBusiness implements BusinessInterface{
+	private static final String FORGOT_PASSWORD_BTN = "idA_PWD_ForgotPassword";
+	private static final String SELECT_EMAIL_BTN = "iProofList";
 	private MicrosoftHomePage homePage;
 	private MicrosoftResultPage resultPage;	
 	
-	public MicrosoftPasswordBusiness(WebDriver driver) {
+	public MicrosoftForgotPasswordBusiness(WebDriver driver) {
 		super();
 		this.resultPage = new MicrosoftResultPage(driver);
 		this.homePage = new MicrosoftHomePage(driver);
 	}
 
 	public void perform(String text) {
-		homePage.clickButton(CONTINUE_BTN);
-		homePage.completeText(text, PASSWORD_PLACE);
+		homePage.clickButton(FORGOT_PASSWORD_BTN);
+		homePage.clickButton(SELECT_EMAIL_BTN);
 		
-		Assert.assertEquals("Iniciar sesión en tu cuenta Microsoft", resultPage.getTitle());
+		Assert.assertEquals("Necesitamos comprobar tu identidad", resultPage.getTitle());
 	}
 
 }
