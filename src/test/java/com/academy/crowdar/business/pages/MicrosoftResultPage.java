@@ -23,5 +23,9 @@ public class MicrosoftResultPage {
 	public Object getTitle() {
 		return driver.getTitle();
 	}
+
+	public Object getUrl() {
+		return driver.getCurrentUrl();
+	}
 	
 }
