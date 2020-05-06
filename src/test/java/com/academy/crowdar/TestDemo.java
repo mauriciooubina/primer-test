@@ -19,7 +19,7 @@ public class TestDemo {
 	
 	@Before
 	public void setup() {
-		System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "/home/mauricio/Descargas/chromedriver");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.microsoft.com/es-ar");	

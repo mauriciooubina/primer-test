@@ -23,6 +23,6 @@ public class MicrosoftLogInBusiness implements BusinessInterface{
 		homePage.clickButton(LOG_IN_BTN);
 		homePage.completeText(text, LOG_IN_PLACE);
 		
-		Assert.assertEquals("Iniciar sesión en tu cuenta Microsoft", resultPage.getTitle());
+		Assert.assertEquals("Iniciar sesiÃ³n en tu cuenta Microsoft", resultPage.getTitle());
 	}
 }

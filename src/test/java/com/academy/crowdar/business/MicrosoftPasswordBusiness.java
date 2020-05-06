@@ -22,7 +22,7 @@ public class MicrosoftPasswordBusiness implements BusinessInterface{
 		homePage.clickButton(CONTINUE_BTN);
 		homePage.completeText(text, PASSWORD_PLACE);
 		
-		Assert.assertEquals("Iniciar sesión en tu cuenta Microsoft", resultPage.getTitle());
+		Assert.assertEquals("Iniciar sesiÃ³n en tu cuenta Microsoft", resultPage.getTitle());
 	}
 
 }
